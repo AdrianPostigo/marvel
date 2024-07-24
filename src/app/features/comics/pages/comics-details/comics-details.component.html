@@ -1,0 +1,23 @@
+<section class="row">
+    <div>
+        <img class="width_image" src="{{this.detailsComic.data.results[0].thumbnail.path}}.jpg" alt="image">
+    </div>
+    <div>
+        <form [formGroup]="detailsForm" class="row_details">
+            <mat-form-field>
+                <!-- <mat-label>{{'login.timestamp' | translate | titlecase }}</mat-label> -->
+                <input type="text" matInput formControlName="name" readonly>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <!-- <mat-label>{{'login.public_key' | translate | titlecase}}</mat-label> -->
+                <textarea matInput formControlName="description" readonly></textarea>
+            </mat-form-field>
+        
+            <mat-form-field>
+              <!-- <mat-label>{{'login.private_key' | translate | titlecase}}</mat-label> -->
+              <input type="text" matInput formControlName="date" readonly>
+            </mat-form-field>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,7 @@
+<section class="row">
+    <article *ngFor="let card of reqResult.data.results">
+        <app-card [data]="card"></app-card>
+    </article>
+</section>
+<!-- <button (click)="pagination('previus')">previus</button><button (click)="pagination('next')">next</button> -->
+

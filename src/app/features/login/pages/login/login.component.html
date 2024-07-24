@@ -1,0 +1,29 @@
+<form novalidate [formGroup]="loginForm" (ngSubmit)="getDataLoginForm()" class="login_container">
+    <mat-form-field>
+        <mat-label>{{'login.timestamp' | translate | titlecase }}</mat-label>
+        <input type="text" matInput formControlName="timestamp">
+        <p class="error" *ngIf="checkControl('timestamp', 'required')">{{ 'login.mandatoryField' | translate }}</p>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>{{'login.public_key' | translate | titlecase}}</mat-label>
+        <input type="text" matInput formControlName="publicKey">
+        <p class="error" *ngIf="checkControl('publicKey', 'required')">{{ 'login.mandatoryField' | translate }}</p>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'login.private_key' | translate | titlecase}}</mat-label>
+      <input type="text" matInput formControlName="privateKey" [type]="hide() ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="clickEvent($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+      >
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <p class="error" *ngIf="checkControl('privateKey', 'required')">{{ 'login.mandatoryField' | translate }}</p>
+    </mat-form-field>
+    <button mat-flat-button [disabled]="!loginForm.valid">{{ 'send' | translate | titlecase }}</button>
+</form>
