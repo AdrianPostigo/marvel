@@ -1,0 +1,9 @@
+{
+    "login": {
+        "timestamp": "-timestamp-",
+        "public_key": "public key",
+        "private_key": "private key",
+        "send": "send",
+        "mandatoryField": "The field is mandatory"
+    }
+}

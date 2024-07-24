@@ -1,0 +1,143 @@
+@keyframes colors{
+    0%{
+      background-color:tomato;
+    }
+    20%{
+      background-color:lightblue;
+    }
+    40%{
+      background-color:lightgreen;
+    }
+    60%{
+      background-color: lightpink;
+    }
+    80%{
+      background-color: lightsteelblue;
+    }
+    100%{
+      background-color: lightseagreen;
+    }
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+  
+body{
+    background-color:tomato;
+    animation: colors 6s ease-in-out infinite;
+}
+  
+.character{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    opacity:0;
+    will-change:auto;
+    &-container{
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
+        overflow: hidden;
+    }
+
+    svg{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &.enter{
+        opacity:1;
+        z-index: 2;
+        svg{
+        z-index:2 !important;
+        }
+    }
+
+    &.out{
+    opacity:1;
+    z-index:1;
+    svg{
+        z-index:1 !important;
+    }
+    }
+
+    &.captain{
+        background-color: #c7e7fb;
+        bottom: -150px;
+        &.enter{
+            transition: 1s ease-in-out bottom;
+            bottom: 0;
+        }
+        &.out{
+            transition: 1s ease-in-out bottom;
+            bottom: 0;
+        }
+    }
+    
+    &.wolwerine{
+        background-color: #fdd201;
+        left: -150px;
+        &.enter{
+            transition: 1s ease-in-out left;
+            left: 0;
+        }
+        &.out{
+            transition: 1s ease-in-out left;
+            left: 0;
+        }
+    }
+    
+    &.spiderman{
+        background-color: #e25530;
+        top: -150px;
+        &.enter{
+            transition: 1s ease-in-out top;
+            top: 0;
+        }
+        &.out{
+            transition: 1s ease-in-out top;
+            top: 0;
+        }
+    }
+    
+    &.ironman{
+        background-color: #fa4222;
+        right: -150px;
+        &.enter{
+            transition: 1s ease-in-out right;
+            right: 0;
+        }
+        &.out{
+            transition: 1s ease-in-out right;
+            right: 0;
+        }
+    }
+}
+.character svg{
+    width: 100px;
+    height: 100px;
+}
+.spiderman{
+    display: flex;
+    justify-content: center;
+}
+.spiderman svg{
+    width: 60px;
+    height: 60px;
+}
